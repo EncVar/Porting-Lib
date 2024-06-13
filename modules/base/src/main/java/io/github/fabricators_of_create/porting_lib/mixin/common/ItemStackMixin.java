@@ -3,7 +3,7 @@ package io.github.fabricators_of_create.porting_lib.mixin.common;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 
 import io.github.fabricators_of_create.porting_lib.common.util.MixinHelper;
-import io.github.fabricators_of_create.porting_lib.extensions.extensions.INBTSerializableCompound;
+import io.github.fabricators_of_create.porting_lib.core.util.INBTSerializable;
 import io.github.fabricators_of_create.porting_lib.extensions.extensions.ItemStackExtensions;
 import io.github.fabricators_of_create.porting_lib.item.DamageableItem;
 
@@ -22,7 +22,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 @Mixin(ItemStack.class)
-public abstract class ItemStackMixin implements INBTSerializableCompound, ItemStackExtensions {
+public abstract class ItemStackMixin implements INBTSerializable<CompoundTag>, ItemStackExtensions {
 
 	@Shadow
 	public abstract CompoundTag save(CompoundTag compoundTag);

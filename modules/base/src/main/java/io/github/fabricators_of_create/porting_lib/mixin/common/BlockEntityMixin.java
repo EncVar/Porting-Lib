@@ -1,6 +1,6 @@
 package io.github.fabricators_of_create.porting_lib.mixin.common;
 
-import io.github.fabricators_of_create.porting_lib.extensions.extensions.INBTSerializableCompound;
+import io.github.fabricators_of_create.porting_lib.core.util.INBTSerializable;
 
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -16,7 +16,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
 @Mixin(BlockEntity.class)
-public abstract class BlockEntityMixin implements BlockEntityExtensions, INBTSerializableCompound {
+public abstract class BlockEntityMixin implements BlockEntityExtensions, INBTSerializable<CompoundTag> {
 	@Unique
 	private CompoundTag port_lib$extraData = null;
 
